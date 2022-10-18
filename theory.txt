@@ -1,43 +1,84 @@
-* What is an Operating System?
+	What is an Operating System?
 
-Operating System is a program that runs on a computer. It manages computer's resources
-such as memory, CPU etc. It also orchestrates all the other programs that user intends 
-to run on a device. 
+Operating System is the most important program that runs on a computer. It's also the first
+to start after the computer boots (disregarding things like BIOS). OS manages computer's resources 
+such as memory, CPU etc. It orchestrates all the other programs that user intends to run on 
+the device. 
 
-* List some functions of an OS
+	List some functions of an OS
 
 One of the most important tasks of an operating system is to run other programs and manage
 their execution. It grants resources (mostly memory and CPU time) to each of them based on
-their priority. It also controlls devices such as disks, flash drives, monitors and so on.
+their priority. It also controls devices such as disks, flash drives, monitors and so on.
 It groups data into file systems to keep it in order. Finally, it enables users (be it 
-a human user or just a different program) to interact with the computer.
+a human user or just a different program) to interact with the computer and its components.
 
-* What is a kernel?
-* What are the tasks of the kernel?
+	What is a kernel?
+	What are the tasks of the kernel?
 
 Kernel is the part of the OS that manages the hardware and various other low-level tasks. 
 It comunicates with devices via their controllers and manages the processes among the others.
-It's also responsible for memory management.
+It's also responsible for things like memory management.
 
-* What is user-space?
+	What is user-space?
 
 Virtual memory is divided into two sections - kernel and user space. In contrast to kernel
 space, user space is available for custom programs. The purpose of that division is to prevent
 potential (accidental or intentional) corruption of OS's memory by user defined programs.
 
-* What is priviliged and what non-priviliged mode?
+	What is priviliged and what non-priviliged mode?
 
 It's a security mechanism of the CPU created to avoid problems caused by execution of users' 
 applications. It can execute instructions either in priviliged or non-priviliged mode. The
 former has no limits while the latter has some instructions restricted (like access to memory).
-OS leverages this feature, by granting priviliged mode to kernel functions and the other one
-to the rest of the processess.
+OS leverages this feature to ensure security, by granting priviliged mode to kernel functions 
+and the other one to the rest of the processess.
 
-* What is a process?
+	What is a process?
 
-Process is a task for OS to perform. In other words it's just a program. It contains of a set 
+Process is a task for an OS to perform. In other words it's just a program. It contains of a set 
 of instructions. In most cases the are more processes in a system than there is workers (CPU
 cores), so there's a necessity for them to share the resource (process scheduling). Beside 
 CPU time, each process has granted its separate area of the memory. Each process has its 
 metadata such as an id or its state. At the particular moment it could be for instance running,
 terminated or waiting for some event to occure. 
+
+	What are common points and what are differences among Windows, MacOS, BSD, Linux?
+
+Similarities:
+The main similarities are that they are all built of kernel and shell components. To some extend
+they provide the same features (like external devices support, network connection, file management
+and so on). They just differ more or less in the way they are implemented. For example MacOS and 
+Linux share identical file system (tree structure of files and directories with common root) whereas 
+in Windows there are drives containing their own separate trees of files. Linux and MacOS both have
+the same shell (tool for a user to communicate with the system) which is different in terms of syntax
+than the Windows' one. One more similarity between MacOs and Linux is that they have pre-buildt 
+package managers that help install new software from Command Line Interface (CLI). Regarding BSD OS,
+it is very similar to Linux (because they are both derived from Unix OS). There are however some rather 
+subtle differences in matters like licencing or performance in certain areas.
+
+Differences:
+What differenciates Linux and BSD from Windows and MacOS is that they're open-source projects.
+Linux and BSD tend to be used by more advanced users (programmers, cyber security analysts etc.).
+Windows and MacOS are usually preferred by non-professional users because they are regarder as more 
+user-friendly (also because they are compatible with more software like games or business tools). 
+Windows uses microkernel while Linux uses monolithic kernel instead. Monolithic kernels are more
+complex and has more utilities. In Windows OS those extra utilities are implemented rather in 
+user-space part. Thing that is unique for Linux is that most concepts (like directories, 
+processess or devices) are represented as files. Thing that we should keep in mind is that
+programs in general are designed for particular OSes. For instance, '.exe' file won't run on 
+a Linux, and at the same time '.sh' file is incompatible with Windows.
+
+	How would you explain virtualization to a complete newbie?
+
+Virtualization is a process of emulating some resources (like some hardware devices or network 
+connection) by a piece of software. Basically a program pretends to be something else, let it be
+a PC setup. We can then run a program or in our case an operating system that is being executed by
+that virtual machine. From the point of view of that OS, there's practically no difference compared 
+to the real hardware. Say we use Windows on our personal computer, but for some reason we want to run 
+an application that has been released only for Linux. Due to virtualization we can launch Linux OS 
+almost as easily as we would run regular program. After we're done using previously mentioned tool, 
+we can then shut down our virtual OS, and resources that were reserved for that instance will be free 
+once again. Obviously there are some downsides and limitations of that method. One of them is that 
+emulated hardware is not as efficient as the real one, hence the worse performance.
+
